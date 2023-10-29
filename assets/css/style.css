@@ -1,0 +1,101 @@
+
+/* #region debug */
+
+.debug .wrapper{
+    background-color: red;
+}
+
+.debug .main-container{
+    background-color: orange;
+}
+
+.debug .sidebar{
+    background-color: green;
+}
+
+.debug .container{
+    background-color: blueviolet;
+}
+
+.debug .topbar{
+    background-color: rgba(255, 255, 0, 0.482);
+}
+
+.debug .toolbar{
+    background-color: rgba(0, 0, 255, 0.484);
+}
+
+/* #endregion debug */
+
+
+
+/* #region utility */
+
+.flex{
+    display: flex;
+}
+
+.relative{
+    position: relative;
+}
+
+.absolute{
+    position: absolute;
+}
+
+.fixed{
+    position: fixed;
+}
+
+/* #region utility */
+
+
+
+/* #region common */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --black: rgb(0, 0, 0);
+    --white: rgb(255, 255, 255);
+    --dark-blue: rgb(20, 25, 34);
+    --dark-gray: rgb(40, 40, 40);
+    --gray: rgb(123, 125, 129);
+    --light-gray: rgb(210, 210, 210);
+    --green: rgb(177, 247, 46);
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper{
+    height: 100vh;
+}
+
+.main-container{
+    width: 100%;
+    height: calc(100% - 100px);
+}
+
+.sidebar{
+    width: 250px;
+    height: 100%;
+}
+
+.container{
+    width: calc(100% - 250px);
+}
+
+.topbar{
+    height: 100px;
+}
+
+
+.toolbar{
+    height: 100px;
+}
