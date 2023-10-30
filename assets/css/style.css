@@ -10,7 +10,7 @@
 }
 
 .debug .sidebar{
-    background-color: green;
+    background-color: rgba(0, 128, 0, 0.553);
 }
 
 .debug .container{
@@ -18,7 +18,7 @@
 }
 
 .debug .topbar{
-    background-color: rgba(255, 255, 0, 0.482);
+    background-color: rgb(149, 255, 0);
 }
 
 .debug .toolbar{
@@ -90,7 +90,10 @@ body{
 
 .main-container{
     width: calc(100% - 250px);
+    /* width: 100%; */
+    padding-top: 90px;
     overflow: auto;
+    scroll-behavior: auto;
 }
 
 .container{
@@ -136,10 +139,19 @@ body{
 /* #region topbar */
 
 .topbar{
-    width: 100%;
+    width: calc(100% - 250px);
+    /* width: 100%; */
     height: 90px;
     justify-content: flex-end;
     align-items: center;
+    position: fixed;
+    top: 0;
+
+    & .upgrade{
+        background-color: red;
+        color: black;
+        font-size: 16px;
+    }
 }
 
 /* #endregion topbar */
