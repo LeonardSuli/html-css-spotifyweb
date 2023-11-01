@@ -274,13 +274,13 @@ a{
         border: 2px solid var(--white);
         padding: 0.75rem 2.5rem;
         border-radius: 2rem;
-        
-        & a{
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--white);
-        }
     }
+        
+    & a{
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--white);
+        }
 
     & .upgrade:hover{
         transform: scale(1.1);
@@ -401,6 +401,58 @@ main{
     justify-content: space-between;
     align-items: center;
     background-color: var(--dark-gray);
+    
+    & .album{
+        
+        & .img-album img{
+            width: 45px;
+            margin-left: 1rem;
+        }
+        
+        & .name-album{
+            padding-left: 0.5rem;
+            margin: auto;
+    
+            & .artist-toolbar{
+                font-size: 12px;
+                font-weight: 700;
+                color: var(--white);
+            }
+    
+            & .subtitle-toolbar a{
+                font-size: 10px;
+                font-weight: 700;
+                color: var(--gray);
+            }
+
+            & .subtitle-toolbar a:hover{
+                color: var(--white);
+                text-decoration: underline;
+            }
+        }
+
+        & .favorites{
+            margin: auto;
+            padding-left: 2rem;
+            color: var(--gray);
+
+            & i{
+                padding: 0.25rem;
+                cursor: pointer;
+            }
+
+            & i.heart:hover{
+                color: red;
+            }
+
+            & i.folder:hover{
+                color: yellow;
+            }
+
+
+        }
+    }
+    
 
 }
 
