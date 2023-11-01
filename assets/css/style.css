@@ -41,6 +41,10 @@
     display: flex;
 }
 
+.wrap{
+    flex-wrap: wrap;
+}
+
 .relative{
     position: relative;
 }
@@ -101,8 +105,6 @@ body{
 }
 
 .row{
-    display: flex;
-    flex-wrap: wrap;
     margin: 0 -0.5rem;
     text-align: center;
 }
@@ -265,6 +267,7 @@ a{
     position: fixed;
     top: 0;
     background-color: rgba(0, 0, 0, 0.401);
+    z-index: 1;
 
     & .upgrade{
         margin-right: 1.5rem;
@@ -296,7 +299,7 @@ main{
         justify-content: center;
 
         & li{
-            padding: 1rem 1rem 2.5rem;
+            padding: 1rem 1rem 1rem;
 
             & a{
                 font-size: 12px;
@@ -324,9 +327,65 @@ main{
         }
     }
 
-    & img{
-        width: 100%;
+    & section{
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        & h2{
+            color: var(--white);
+            font-size: 24px;
+        }
+
+        & .images{
+            margin-top: 1.25rem;
+            margin-bottom: 1rem;
+            width: 100%;
+            
+            & img{
+                width: 100%;
+            }
+            
+            & i{
+                font-size: 50px;
+                color: var(--white);
+                display: none;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        
+        & a:hover img{
+            filter: brightness(0.5);
+        }
+        
+        & a:hover i{
+            display: block;
+        }
+    
+        & .artist{
+            color: var(--white);
+            font-weight: 700;
+            padding-bottom: 0.5rem;
+        }
+    
+        & .subtitle{
+            color: var(--gray);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        & p{
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--gray);
+            padding-top: 0.5rem;
+        }
     }
+
+    & .popular .col-2 img{
+        border-radius: 50%;
+    }    
 }
 
 /* #endregion main */
