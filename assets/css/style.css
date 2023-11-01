@@ -115,6 +115,14 @@ body{
     width: calc((100% / 12) * 2);
 }
 
+ul li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
 /* #endregion common */
 
 
@@ -154,12 +162,10 @@ body{
     }
 
     & nav ul li{
-        list-style: none;
         padding: 0.25rem 1rem;
     }
 
     & a{
-        text-decoration: none;
         color: var(--gray);
         align-items: center;
         font-weight: 700;
@@ -217,7 +223,6 @@ body{
             & svg{
                 width: 24px;
             }
-            
         }
 
         & .user{
@@ -241,8 +246,6 @@ body{
             }
         }
     }
-
-
 }
 
 /* #endregion sidebar */
@@ -261,9 +264,20 @@ body{
     background-color: rgba(0, 0, 0, 0.401);
 
     & .upgrade{
-        background-color: red;
-        color: black;
-        font-size: 16px;
+        margin-right: 1.5rem;
+        border: 2px solid var(--white);
+        padding: 0.75rem 2.5rem;
+        border-radius: 2rem;
+        
+        & a{
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--white);
+        }
+    }
+
+    & .upgrade:hover{
+        transform: scale(1.1);
     }
 }
 
