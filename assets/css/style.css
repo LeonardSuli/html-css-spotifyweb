@@ -199,8 +199,11 @@ a{
         font-size: 30px;
     }
 
-    & .plus:hover{
-        background-color: var(--white);
+    .playlist .create:hover{
+
+        & .plus{
+            background-color: white;
+        }
     }
 
     & .playlist li{
@@ -291,6 +294,34 @@ main{
 
     & .top-main ul{
         justify-content: center;
+
+        & li{
+            padding: 1rem 1rem 2.5rem;
+
+            & a{
+                font-size: 12px;
+                font-weight: 700;
+                color: var(--gray);
+            }
+
+            & a:hover{
+                color: var(--white);
+            }
+ 
+            & a::after{
+                content: '';
+                display: block;
+                margin: auto;
+                height: 2px;
+                width: 0px;
+                transition: width 0.7s ease, background-color .5s ease;
+            }
+
+            & a:hover:after{
+                background-color: var(--green);
+                width: 100%;
+            }
+        }
     }
 
     & img{
