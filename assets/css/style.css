@@ -141,6 +141,12 @@ a{
     color: var(--gray);
     font-size: 12px;
 
+    & .favicon{
+        color: var(--white);
+        background-color: var(--white);
+        display: none;
+    }
+
     & .logo{
         width: 170px;
         padding: 1rem 1rem 1.5rem;
@@ -482,9 +488,11 @@ main{
         & .bottom-player{
             justify-content: space-between;
             align-items: center;
+            width: 500px;
             
             & .bottom-player-bar{
-                width: 500px;
+                flex-shrink: 5;
+                width: 100%;
                 align-items: center;
                 cursor: pointer;
             }
@@ -594,3 +602,85 @@ main{
 }
 
 /* #endregion toolbar */
+
+
+
+/* #region media query height */
+
+@media screen and (max-height: 650px){
+    .bottom-sidebar{
+        position: static;
+    }
+}
+
+@media screen and (max-height: 160px){
+    .topbar{
+        display: none;
+    }
+
+    .main-container{
+        z-index: -1;
+    }
+}
+
+/* #endregion media query */
+
+
+/* #region media query width */
+
+@media screen and (max-width: 1024px){
+
+}
+
+@media screen and (max-width: 768px) {
+  
+    .col-2{
+        width: 25%;
+    }
+    
+}
+
+
+@media screen and (max-width: 640px){
+
+    .col-2{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 475px){
+   .sidebar{
+    width: 50px;
+   }
+
+   .main-container{
+    width: calc(100% - 50px);
+   }
+   
+   .big-logo, .playlist, .topbar, .nav span, .dowload span, .user span {
+    display: none;
+   }
+
+   svg{
+    margin-right: 15px;
+   }
+
+   .favicon{
+    display: block;
+   }
+
+   .bottom-sidebar svg{
+    width: 35px;
+   }
+
+   .sidebar
+   & .bottom-sidebar
+   & .download
+   & svg {
+       width: 35px;
+   }
+   
+}
+
+/* #endregion media query width */
+
