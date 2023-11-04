@@ -141,16 +141,19 @@ a{
     color: var(--gray);
     font-size: 12px;
 
-    & .favicon{
-        color: var(--white);
-        background-color: var(--white);
-        display: none;
-    }
-
     & .logo{
         width: 170px;
         padding: 1rem 1rem 1.5rem;
+
+        & .favicon{
+            color: var(--white);
+            background-color: var(--white);
+            filter: invert(1);
+            display: none;
+            margin-left: -6px;
+        }
     }
+
 
     & svg{
         width: 30px;
@@ -189,7 +192,6 @@ a{
         border-left: 2px solid var(--green);
     }
     
-
     & .text-playlist{
         color: var(--white);
         font-size: 14px;
@@ -598,7 +600,7 @@ main{
         }
     }
     
-
+    
 }
 
 /* #endregion toolbar */
@@ -607,10 +609,17 @@ main{
 
 /* #region media query height */
 
-@media screen and (max-height: 650px){
+@media screen and (max-height: 650px) and (min-width: 475px){
     .bottom-sidebar{
         position: static;
     }
+}
+
+@media screen and (max-height: 300px) and (max-width: 475px) {
+    .bottom-sidebar{
+        position: static;
+    }
+    
 }
 
 @media screen and (max-height: 160px){
@@ -621,14 +630,22 @@ main{
     .main-container{
         z-index: -1;
     }
+
+    .toolbar{
+        max-height: 100%;
+    }
 }
 
-/* #endregion media query */
+/* #endregion media query height */
 
 
 /* #region media query width */
 
 @media screen and (max-width: 1024px){
+
+    .line-small, .line-large{
+        flex-shrink: 5;
+    }
 
 }
 
@@ -657,7 +674,7 @@ main{
     width: calc(100% - 50px);
    }
    
-   .big-logo, .playlist, .topbar, .nav span, .dowload span, .user span {
+   .big-logo, .playlist, .topbar, .nav span, .user span, .download span {
     display: none;
    }
 
@@ -666,21 +683,29 @@ main{
    }
 
    .favicon{
+    visibility: visible;
     display: block;
    }
 
-   .bottom-sidebar svg{
+   nav{
+    margin-top: 1rem;
+   }
+
+   .bottom-sidebar .icon-svg{
     width: 35px;
    }
 
-   .sidebar
-   & .bottom-sidebar
-   & .download
-   & svg {
-       width: 35px;
+   .sidebar .bottom-sidebar svg {
+    width: 35px;
+    margin-right: 0;
+   }
+
+   .sidebar .bottom-sidebar .download{
+    border-bottom: none;
    }
    
 }
+
 
 /* #endregion media query width */
 
