@@ -153,7 +153,6 @@ a{
         }
     }
 
-
     & svg{
         width: 30px;
         display: block;
@@ -305,7 +304,7 @@ main{
         justify-content: center;
 
         & li{
-            padding: 1rem 1rem 1rem;
+            padding: 1rem;
 
             & a{
                 font-size: 12px;
@@ -456,8 +455,7 @@ main{
             & i.folder:hover{
                 color: var(--yellow);
             }
-        }
-        
+        }  
     }
     
     & .player{
@@ -531,9 +529,7 @@ main{
                     display: none;
                     padding: 0;
                 }
-            }
-                
-                
+            }    
             
             & .bottom-player-bar:hover .line-small{
                 background-color: var(--green);
@@ -541,10 +537,7 @@ main{
             
             & .bottom-player-bar:hover .circle{
                 display: block;    
-            }
-
-         
-            
+            }            
         }
     }
     
@@ -602,8 +595,6 @@ main{
             display: block;
         }
     }
-    
-    
 }
 
 /* #endregion toolbar */
@@ -653,7 +644,6 @@ main{
 
     .volume{
         flex-direction: column;
-        justify-content: space-evenly;
     }  
 }
 
@@ -666,27 +656,41 @@ main{
     .img-album img{
         width: 40px;
     }
-    
+
+    .cover-cure, .cover-sinister{
+        display: none;
+    }  
 }
 
 
 @media screen and (max-width: 640px){
     
     .col-2{
-        width: 50%;
+        width: calc(100% / 3);
     }
     
     .album, .player, .volume{
      scale: 0.7;
     }
 
+    .cover-split{
+        display: none;
+    }
 }
 
 @media screen and (max-width: 475px){
 
+    .col-2{
+        width: 50%;
+    }
+
+    .cover-quiet{
+        display: none;
+    }
+
     .album, .player, .volume{
         scale: 0.6;
-       }
+    }
 
    .sidebar{
     width: 50px;
@@ -725,15 +729,7 @@ main{
     width: 30px;
     margin-left: 1rem;
    }
-
-
-   
 }
-
-
-
-
-
 
 @media screen and (min-width: 475px){
 
@@ -741,6 +737,5 @@ main{
         display: none;
     }
 }
-
 
 /* #endregion media query width */
