@@ -144,13 +144,11 @@ a{
     & .logo{
         width: 170px;
         padding: 1rem 1rem 1.5rem;
-
+        
         & .favicon{
             color: var(--white);
             background-color: var(--white);
             filter: invert(1);
-            /* display: none; */
-            /* visibility: hidden; */
             margin-left: -6px;
         }
     }
@@ -166,17 +164,21 @@ a{
         top: 0;
         left: 0;
     }
+    
+    & a:hover{
+        color: var(--white);
+    } 
 
-    & .icon-gray:hover{
+    & a:hover svg.icon-gray{
         display: none;
     }
     
-    & .icon-white:hover{
-        display: block;
-    }
-
     & nav ul li{
         padding: 0.25rem 1rem;
+    }
+
+    & nav ul li:hover{
+        border-left: 2px solid var(--green);
     }
 
     & a{
@@ -185,14 +187,7 @@ a{
         font-weight: 700;
     }
 
-    & a:hover{
-        color: var(--white);
-    } 
 
-    & nav ul li:hover{
-        border-left: 2px solid var(--green);
-    }
-    
     & .text-playlist{
         color: var(--white);
         font-size: 14px;
@@ -283,7 +278,7 @@ a{
     & .upgrade{
         margin-right: 1.5rem;
         border: 2px solid var(--white);
-        padding: 0.75rem 2.5rem;
+        padding: 0.75rem 2rem;
         border-radius: 2rem;
     }
         
@@ -415,6 +410,7 @@ main{
     color: var(--white);
     
     & .album{
+        width: 20%;
         
         & .img-album img{
             width: 45px;
@@ -445,7 +441,7 @@ main{
 
         & .favorites{
             margin: auto;
-            padding-left: 2rem;
+            padding-left: 1rem;
             color: var(--gray);
 
             & i{
@@ -461,11 +457,13 @@ main{
                 color: var(--yellow);
             }
         }
-
+        
     }
     
     & .player{
-        width: 100%;
+        margin: auto;
+        min-width: 225px;
+        width: 40%;
         height: 100%;
         flex-direction: column;
         align-items: center;
@@ -545,17 +543,17 @@ main{
                 display: block;    
             }
 
-            & .bottom-player-bar:hover .top-player{
-                padding-bottom: -0,5rem;
-            }
+         
             
         }
     }
     
     & .volume{
+        width: 20%;
+        justify-content: center;
         
         & i{
-            padding: 0.75rem;
+            padding: 0.75rem 0.5rem;
             cursor: pointer;
         }
         
@@ -564,6 +562,8 @@ main{
             margin-right: 1rem;
             align-items: center;
             cursor: pointer;
+            justify-content: center;
+            align-items: center;
         }
 
         & .line-small, & .line-large{
@@ -635,11 +635,12 @@ main{
     }
 
     .toolbar{
-        max-height: 100%;
+        min-height: 80px;
     }
 }
 
 /* #endregion media query height */
+
 
 
 /* #region media query width */
@@ -650,43 +651,42 @@ main{
         width: 300px;
     }
 
-
+    .volume{
+        flex-direction: column;
+        justify-content: space-evenly;
+    }  
 }
 
 @media screen and (max-width: 768px) {
-  
+    
     .col-2{
         width: 25%;
+    }
+
+    .img-album img{
+        width: 40px;
     }
     
 }
 
 
 @media screen and (max-width: 640px){
-
+    
     .col-2{
         width: 50%;
     }
-
-    .volume{
-        flex-direction: column;
+    
+    .album, .player, .volume{
+     scale: 0.7;
     }
 
-    .volume-icon{
-        margin-right: 0.5rem;
-    }
-
-    .img-album img{
-        min-width: 30px;
-        margin-left: -0.5rem;
-    }
-
-    .favorites{
-        padding-left: 1rem;
-    }
 }
 
 @media screen and (max-width: 475px){
+
+    .album, .player, .volume{
+        scale: 0.6;
+       }
 
    .sidebar{
     width: 50px;
@@ -702,11 +702,6 @@ main{
 
    svg{
     margin-right: 15px;
-   }
-
-   .favicon{
-    /* display: block; */
-    visibility: visible;
    }
 
    nav{
@@ -725,9 +720,27 @@ main{
    .sidebar .bottom-sidebar .download{
     border-bottom: none;
    }
+
+   .img-album img{
+    width: 30px;
+    margin-left: 1rem;
+   }
+
+
    
 }
 
 
-/* #endregion media query width */
 
+
+
+
+@media screen and (min-width: 475px){
+
+    .favicon{
+        display: none;
+    }
+}
+
+
+/* #endregion media query width */
